@@ -1,0 +1,41 @@
+{% extends "template.html.twig" %}
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xs-12 col-sm-6">
+                <h1>Active seances:</h1>
+            </div>
+        </div>
+    </div>
+
+
+{% if seances %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Device Type</th>
+            <th scope="col">Date Time</th>
+            <th scope="col">Agent</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for seance in seances %}
+            <tr>
+                <td scope="row">{{ seance.device_type }}</td>
+                <td scope="row">{{ seance.date_time }}</td>
+                <td>{{ seance.user_agent }}</td>
+                <td><a href="/login/logout?id={{ seance.id }}">Logout</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+
+{% endblock %}

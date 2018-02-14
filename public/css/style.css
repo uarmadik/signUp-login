@@ -1,0 +1,52 @@
+body {
+    padding: 2em 0;
+}
+
+.custom-content-container {
+    padding: 1em 0;
+}
+
+.width-full {
+    width: 100%;
+}
+.carousel-custom {
+    height: 500px;
+    overflow: hidden;
+    background-color: #222;
+    margin-bottom: 1em;
+}
+    .carousel-custom .carousel-item img {
+        margin: 0 auto;
+        height: 100%;
+    }
+
+
+    /* loading animation */
+
+    .loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,.4);
+    }
+        .loading img {
+            display: block;
+            margin: 100px auto;
+        }
+
+    /* /loading animation */
+
+
+.btn {
+    margin: 5px;
+}
+
+/* alert */
+
+    .custom-alert {
+        position: absolute;
+    }
+
+/* /alert */

@@ -1,0 +1,9 @@
+
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-store, no-cache"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "now"
+</IfModule>

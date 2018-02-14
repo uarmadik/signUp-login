@@ -1,0 +1,26 @@
+CREATE TABLE `users` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`user_name` VARCHAR(30) NOT NULL,
+	`user_email` VARCHAR(100) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
+
+CREATE TABLE `seances` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`cookie` VARCHAR(255) NOT NULL,
+	`device_type` VARCHAR(100) NOT NULL,
+	`user_agent` VARCHAR(255) NOT NULL,
+	`user_id` INT(11) NOT NULL,
+	`date_time` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
+

@@ -1,0 +1,26 @@
+{
+    "name": "route/simple route",
+    "description": "Simple MVC core for routing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ihor Harmider",
+            "email": "uarmadik@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "twig/twig": "^3.0@dev",
+        "mobiledetect/mobiledetectlib": "^2.8"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "app\\core\\": "app/core",
+            "app\\models\\": "app/models",
+            "app\\controllers\\": "app/controllers",
+            "Twig\\" : "vendor/twig/src/",
+            "phpQuery\\" : "lib/"
+        }
+    }
+}

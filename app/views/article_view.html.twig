@@ -1,0 +1,71 @@
+{% extends "template.html.twig" %}
+{% block title %}
+    Article
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <a href="/" class="btn btn-outline-dark">Main page</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xs-12 col-sm-8">
+                <h2>{{ article.header }}</h2>
+            </div>
+
+        </div>
+        {% if images %}
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Images:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 width-full">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-custom" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        {% for key, image in images %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ key }}" {% if key == 0 %}class="active">{% endif %}</li>
+                        {% endfor %}
+                    </ol>
+                    <div class="carousel-inner">
+                        {% for key, image in images %}
+                        <div class="carousel-item {% if key == 0 %}active{% endif %}">
+                            <img class="d-block" src="/uploads/img/{{ image }}" alt="slide">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    {{ article.text }}
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    {#<link rel="stylesheet" href="../../public/css/normalize.css">#}
+    {#<link rel="stylesheet" href="../../public/css/media.css">#}
+
+    {# Bootstrap #}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {#<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>#}
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+    <script src="/public/js/main.js"></script>
+
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row align-items-center justify-content-end">
+        {% if user %}
+            <div class="col-xs-6">
+                <p>Hello, <b>{{ user.user_name }}</b>!</p>
+            </div>
+        {% else %}
+            <div class="col-xs-6">
+                <a href="/register" class="btn btn-info">Sign Up</a>
+            </div>
+            <div class="col-xs-6">
+                <a href="/login" class="btn btn-warning">Login</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if error_msg %}
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-warning alert-dismissible fade show custom-alert" role="alert">
+                {{ error_msg }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+
+
+
+<div class="container custom-content-container">
+    <div class="row ">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+    {#<div class="wrap">#}
+
+        {#{% block content %}#}
+
+        {#{% endblock %}#}
+
+    {#</div>#}
+
+<div class="loading" style="display:none;">
+    <img src="http://www.freeiconspng.com/uploads/spinner-icon-0.gif" width="200px" alt="loading">
+</div>
+
+
+</body>
+</html>
